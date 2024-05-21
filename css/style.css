@@ -1,0 +1,363 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.set-header{
+    height: 100vh;
+    width: 100%;
+    align-items: start;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.set-header::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(6,18,30,0.4), #06121e), url(/img/capa-fundo.jpg);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.header{
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.header > .menu{
+    display: flex;
+    gap: 30px;
+}
+
+.header > .menu > li{
+    display: block;
+    font-weight: bold;
+    padding: 8px 16px;
+    position: relative;
+    transition: font-size 0.6s;
+}
+
+@media(max-width: 730px){
+    .header, .header > .menu{
+        gap: 12px
+    }
+
+    .header > .menu > li{
+        padding: 5px 10px;
+    }
+
+    .header > .menu > li > a{
+        font-size: 15px;
+        font-weight: normal;
+    }
+}
+
+.header > .menu > li:hover{
+    font-size: 1.02em;
+    cursor: pointer;
+}
+
+.header > .menu > li::after{
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: white;
+    width: 0%;
+    height: 1px;
+    transition: 0.6s ease-in-out;
+}
+
+.header > .menu > li:hover::after{
+    width: 100%;
+}
+
+.header > .carrinho{
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.header > .carrinho:hover{
+    animation: animacao 0.7s alternate infinite;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.header > .carrinho img{
+    width: 60px;
+}
+
+@media(max-width: 730px){
+    .header > .carrinho{
+        width: 80px;
+        height: 80px;
+        right: 0;
+        bottom: 0;
+    }
+
+    .header > .carrinho img{
+        width: 50px;
+    }
+}
+
+.set-header .login > button{
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    transition: color 0.6s;
+}
+
+.set-header .login #botao-in{
+    background-color: transparent; 
+    border: 1px solid red;
+}
+
+.set-header .login > button + button{
+    margin-left: 15px;
+}
+
+.set-header .login > button:hover{
+    cursor: pointer;
+    animation: animacao 0.7s alternate infinite;
+}
+
+@media(max-width: 730px){
+    .set-header .login #botao-in{
+        display: none;
+    }
+}
+
+@keyframes animacao {
+    from{
+        transform: scale(1);
+    } to{
+        transform: scale(1.05);
+    }
+}
+
+/* ===================== conteudo principal ===================== */
+
+.main{
+    width: 100%;
+    height: 150px;
+    padding: 10px 0px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.185);
+}
+
+.main h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+@media (max-width: 778px){
+    .main{
+        height: 100px;
+    }
+
+    .main h1{
+        font-size: 15px;
+    }
+}
+
+.main span{
+    position: relative;
+}
+
+.main span::before{
+    content: "";
+    color: red;
+    animation: animacaoPalavras 20s infinite;
+}
+
+.main span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid red;
+    right: -5px;
+    animation: cursorPiscando .6s infinite, mostraPalavras 20s steps(35) infinite;
+    width: calc(100% + 12px);
+    background-color: white;
+}
+
+@keyframes cursorPiscando{
+    0%{
+       border-left: 2px solid white;
+    }
+}
+
+@keyframes mostraPalavras {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 12px);
+    }
+}
+
+@keyframes animacaoPalavras{
+    0%,20%{
+        content: "Elegância e precisão em cada segundo.";
+    }
+    21%,40%{
+        content: "O toque final que seu estilo merece.";
+    }
+    41%,60%{
+        content: "Seu tempo, nosso compromisso.";
+    }
+    61%,80%{
+        content: "Mais que um acessório, uma declaração.";
+    }
+    81%,100%{
+        content: "O presente perfeito para qualquer ocasião.";
+    }
+}
+
+/* ===================== CADS ===================== */
+
+.masculino{
+    padding-bottom: 30px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.185);
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+}
+
+.card{
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    width: 300px;
+    padding: 10px;
+    transition: transform .4s;
+}
+
+.card > p{
+    color: black;
+}
+
+.card > span{
+    color: dimgray;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card > button{
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media(max-width: 778px){
+    .card{
+        max-width: 200px;
+    }
+}
+
+.card > img{
+    width: 100%;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    cursor: pointer;
+}
+
+/* ===================== CADS ===================== */
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 20px 10px;
+    margin-top: 15px;
+    background-color: #1C1C1C;
+    max-width: 100%;
+}
+
+@media(max-width: 730px){
+    .footer{
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+}
+
+.footer h1{
+    font-size: 20px;
+    color: red;
+    text-align: center;
+}
+
+.footer .iconsImagens{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer span{
+    display: block;
+}
+
+.footer .contatos > h1{
+    /* border: 1px solid black; */
+    padding-bottom: 10px;
+}
+
+/* .footer p{
+    max-width: 35%;
+} */
+

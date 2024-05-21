@@ -1,0 +1,35 @@
+body{
+    background-image: url(/img/capa-fundo.jpg);
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.formulario{
+    /* border: 1px solid red; */
+    padding: 0px 30px;
+    color: white;
+}
+
+.formulario > input{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.formulario > input[type=button]{
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    backdrop-filter: blur(15px);
+    margin-top: 20px;
+}
