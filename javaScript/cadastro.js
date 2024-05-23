@@ -4,8 +4,27 @@ function cadastro(){
     const dataNascimento = document.querySelector('#dataNascimento').value;
     const email = document.querySelector('#email').value;
 
-    if(nome === "" && sobreNome === "" && dataNascimento === "" &&email === ""){
-        alert("É preciso preencher todos os campos");
-    } 
-
+    if(nome === ""){
+        alert("campo do nome vazio. Preencha");
+    } else{
+        console.log(nome);  
+    }
+    
+    if(sobreNome === ""){
+        alert("campo do sobre nome vazio. Preencha");
+    } else{
+        console.log(sobreNome);
+    }
+    
+    if(dataNascimento === ""){
+        alert("campo da data de nascimento vazio. Preencha");
+    } else{
+        console.log(dataNascimento);
+    }
+    
+    if(email === ""){
+        alert("campo do email vazio. Preencha");
+    } else{
+        console.log(email);
+    }    
 }

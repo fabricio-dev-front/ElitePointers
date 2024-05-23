@@ -14,6 +14,9 @@ body{
 }
 
 .formulario{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
     padding: 0px 30px;
     color: white;
 }
@@ -21,14 +24,36 @@ body{
 .formulario > input{
     display: block;
     margin-bottom: 10px;
+    height: 30px;
+    border-radius: 5px;
 }
 
 .formulario > input[type=button]{
     width: 100%;
-    padding: 10px 0px 10px 0px;
+    height: 40px;
+    box-shadow: none;
+    border: none;
     border-radius: 5px;
     background-color: transparent;
     color: white;
-    backdrop-filter: blur(15px);
     margin-top: 20px;
+}
+
+.formulario > input[type=button]:hover{
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+@media(max-width: 760px){
+    body{
+        backdrop-filter: none;
+    }
+
+    .formulario{
+        padding: 0;
+    }
+
+    .formulario h1{
+        font-size: 30px;
+    }
 }
