@@ -357,7 +357,16 @@ body{
     padding-bottom: 10px;
 }
 
-/* .footer p{
-    max-width: 35%;
-} */
+
+/* animações js */
+.js-scrollAnimado{
+    opacity: 0;
+    transform: translate3d(-20, 0, 0);
+    transition: .2s;
+}
+
+.js-scrollAnimado.ativo{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
 
