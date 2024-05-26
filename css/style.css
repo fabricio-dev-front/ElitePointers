@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
 
 img{
@@ -293,11 +294,22 @@ body{
 }
 
 .card > button{
-    background-color: red;
+    /* background-color: red;
+     */
+     color: black;
+     background-color: white;
+     border: 1px solid black;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    transition: .3s;
+}
+
+.card > button:hover{
+    cursor: pointer;
+    background-color: red;
+    color: white;
 }
 
 @media(max-width: 778px){
