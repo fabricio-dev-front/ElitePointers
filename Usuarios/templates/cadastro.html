@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cadastro.css">
-    <script src="/javaScript/cadastro.js" defer></script>
+    <link rel="stylesheet" href="{% static 'ElitePointers/css/cadastro.css' %}">
+    <script src="{% static 'ElitePointers/javaScript/cadastro.js' %}" defer></script>
     <title>Seja bem vindo(a)</title>
 </head>
 <body>
     <div class="container">
-        <form action="" class="formulario">
+        <form action="" method="post" class="formulario">
             <h1>Bem vindos a Elite Pointers</h1>    
 
             <label for="">Nome:</label>

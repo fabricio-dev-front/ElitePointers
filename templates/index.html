@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="{% static 'ElitePointers/css/style.css' %}" />
 
     <title>Elite Pointers</title>
   </head>
@@ -17,7 +18,7 @@
           <li><a href="#feminino">Feminino</a></li>
         </ul>
         <div class="carrinho">
-          <a href=""><img src="/img/carrinho.png" alt=""></a>
+          <a href=""><img src="{% static 'ElitePointers/img/carrinho.png' %}" alt=""></a>
         </div>
         <div class="login">
           <button id="botao-in">Sign in</button> <!-- entrar -->
@@ -33,49 +34,49 @@
     <section class="masculino js-scrollAnimado" id="masculino">
       <div class="cards">
         <div class="card">
-          <img src="/img/masculinos/relogi-01.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogi-01.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$100,00</span>
           <button>Comprar</button>
         </div>
 
         <div class="card">
-          <img src="/img/masculinos/relogio-02.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-02.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$150,00</span>
           <button>Comprar</button>
         </div>
 
         <div class="card">
-          <img src="/img/masculinos/relogio-03.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-03.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$200,00</span>
           <button>Comprar</button>
         </div>
 
         <div class="card">
-          <img src="/img/masculinos/relogio-04.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-04.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$300,00</span>
           <button>Comprar</button>
         </div>
         
         <div class="card">
-          <img src="/img/masculinos/relogio-05.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-05.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$90,00</span>
           <button>Comprar</button>
         </div>  
 
         <div class="card">
-          <img src="/img/masculinos/relogio-06.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-06.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$120,00</span>
           <button>Comprar</button>
         </div>
 
         <div class="card">
-          <img src="/img/masculinos/relogio-8.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/masculinos/relogio-8.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$270,00</span>
           <button>Comprar</button>
@@ -86,37 +87,37 @@
     <section class="feminino js-scrollAnimado" id="feminino">
       <div class="cards">
         <div class="card">
-          <img src="/img/femininos/relogio-1.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-1.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$130,00</span>
           <button>Comprar</button>
         </div>
         <div class="card">
-          <img src="/img/femininos/relogio-2.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-2.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$190,00</span>
           <button>Comprar</button>
         </div>
         <div class="card">
-          <img src="/img/femininos/relogio-3.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-3.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$350,00</span>
           <button>Comprar</button>
         </div>
         <div class="card">
-          <img src="/img/femininos/relogio-4.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-4.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$200,00</span>
           <button>Comprar</button>
         </div>
         <div class="card">
-          <img src="/img/femininos/relogio-5.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-5.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$150,00</span>
           <button>Comprar</button>
         </div>
         <div class="card">
-          <img src="/img/femininos/relogio-6.jpg" alt="">
+          <img src="{% static 'ElitePointers/img/femininos/relogio-6.jpg' %}" alt="">
           <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
           <span>R$100,00</span>
           <button>Comprar</button>
@@ -132,9 +133,9 @@
       <div class="formasDePagamento">
         <h1>Formas de pagamento:</h1>
         <article class="iconsImagens">
-          <abbr title="Á vista"><img src="/img/pagamentos/Ávista.svg" alt=""></abbr>
-          <abbr title="Parcelamos no cartão"><img src="/img/pagamentos/cretidos.svg" alt=""></abbr>
-          <abbr title="Aceitamos Pix"><img src="/img/pagamentos/pix.svg" alt=""></abbr>
+          <abbr title="Á vista"><img src="{% static 'ElitePointers/img/pagamentos/Ávista.svg' %}" alt=""></abbr>
+          <abbr title="Parcelamos no cartão"><img src="{% static 'ElitePointers/img/pagamentos/cretidos.svg' %}" alt=""></abbr>
+          <abbr title="Aceitamos Pix"><img src="{% static 'ElitePointers/img/pagamentos/pix.svg' %}" alt=""></abbr>
       </article>
       </div>
       <div class="contatos">
@@ -145,7 +146,7 @@
       </div>
     </footer>
 
-    <script src="/javaScript/script.js"></script>
+    <script src="{% static 'ElitePointers/javaScript/script.js' %}"></script>
 </body>
 </html>
 
