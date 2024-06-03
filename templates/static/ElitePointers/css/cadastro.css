@@ -1,5 +1,5 @@
 body{
-    background-image: url(/img/capa-fundo.jpg);
+    background-image: url("/workspaces/ElitePointers/templates/static/ElitePointers/img/capa-fundo.jpg");
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(3px);

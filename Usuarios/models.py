@@ -5,7 +5,7 @@ class User(models.Model):
     sobrenome = models.CharField(max_length=50)
     dataNascimento = models.DateField()
     email = models.EmailField()
-    permissao = models.BooleanField()
+    permissao = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nome
