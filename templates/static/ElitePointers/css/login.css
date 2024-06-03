@@ -1,0 +1,69 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-image: url(../img/capa-fundo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form{
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.container form > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.container form > div > input{
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.799);
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.container form > div > label{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.container form > button{
+    border: none;
+    background-color: transparent;
+}
+
+.container form > button > a{
+    display: block;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: .3s;
+}
+
+.container form > button > a:hover{
+    color: rgba(255, 255, 255, 0.562);
+    border: 1px solid rgba(255, 255, 255, 0.562);
+}
