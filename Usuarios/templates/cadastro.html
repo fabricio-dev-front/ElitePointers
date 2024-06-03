@@ -10,22 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="post" class="formulario">
-            <h1>Bem vindos a Elite Pointers</h1>    
+        <form method="post" class="formulario" action="{% url "cadastro" %}">
+            {% csrf_token %}
+            <h1>Bem vindos a Elite Pointers</h1>   
 
-            <label for="">Nome:</label>
-            <input type="text" id="nome" placeholder="nome">
-
-            <label for="">Sobrenome:</label>
-            <input type="text" id="sobrenome" placeholder="sobrenome">
-
-            <label for="">Data de nascimento:</label>
-            <input type="date" name="" id="dataNascimento">
-
-            <label for="">E-mail válido:</label>
-            <input type="email" name="" id="email" placeholder="E-mail">
-
-            <input type="button" value="Cadastra-se" onclick="cadastro()">
+            {% for field in form %}
+                {{field.label}}
+                {{field}}
+            {% endfor %}
+    
+            <input type="submit" value="Cadastra-se">
         </form>
     </div>
 </body>
