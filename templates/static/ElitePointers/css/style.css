@@ -52,7 +52,7 @@ body{
 
 .header > .menu{
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .header > .menu > li{
@@ -64,8 +64,8 @@ body{
 }
 
 @media(max-width: 730px){
-    .header, .header > .menu{
-        gap: 12px
+    .header > .menu{
+        gap: 4px
     }
 
     .header > .menu > li{
@@ -73,7 +73,7 @@ body{
     }
 
     .header > .menu > li > a{
-        font-size: 15px;
+        font-size: 10px;
         font-weight: normal;
     }
 }
