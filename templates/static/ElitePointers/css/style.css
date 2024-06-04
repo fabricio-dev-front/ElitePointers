@@ -73,7 +73,7 @@ body{
     }
 
     .header > .menu > li > a{
-        font-size: 10px;
+        font-size: 13px;
         font-weight: normal;
     }
 }
@@ -164,6 +164,10 @@ body{
 @media(max-width: 730px){
     .set-header .login #botao-in{
         display: none;
+    }
+
+    .set-header .header .login #botao{
+        margin-left: -10px;
     }
 }
 
