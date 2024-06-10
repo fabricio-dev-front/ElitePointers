@@ -1,25 +1,27 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../templates/static/ElitePointers/css/login.css">
+    <link rel="stylesheet" href="{% static 'ElitePointers/css/login.css' %}">
     <title>login</title>
 </head>
 <body>
     <div class="container">
-        <form>
+        <form action="{% url "login" %}" method="POST">
+            {% csrf_token %}
             <div>
                 <label for="">Email</label>
-                <input type="text">
+                <input type="email" name="email">
             </div>
 
             <div>
                 <label for="">Senha</label>
-                <input type="password">
+                <input type="password" name="senha">
             </div>
 
-            <button><a href="">Sign in</a></button>
+            <button ><a type="submit">Sign in</a></button>
         </form>
     </div>
 </body>

@@ -10,8 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="post" class="formulario" action="{% url "cadastro" %}">
-            {% csrf_token %}
+        <form method="post" class="formulario" action="{% url "cadastro" %}"> {% csrf_token %}
             <h1>Bem vindos a Elite Pointers</h1>   
 
             {% for field in form %}
