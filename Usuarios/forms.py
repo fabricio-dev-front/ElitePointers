@@ -1,22 +1,21 @@
-from django.forms import ModelForm,TextInput,EmailInput,DateInput
-from .models import User
-
+from django.forms import ModelForm,TextInput,EmailInput,DateInput,PasswordInput
+from .models import Usuario
 class UserForm(ModelForm):
     class Meta:
-        model = User
+        model = Usuario
         fields = [
-            'nome','sobrenome','dataNascimento','email'
+            'nome','sobrenome','email','senha'
         ]
         widgets = {
-            "nome": TextInput(attrs={"id":"nome","type":"text","placeholder":"Nome"}),
-            "sobrenome": TextInput(attrs={"id":"sobrenome","type":"text","placeholder":"Sobrenome"}),
-            "dataNascimento": DateInput(attrs={"id":"dataNascimento","type":"date"}),
-            "email": EmailInput(attrs={"id":"email","type":"email","placeholder":"Email"}),
+            "nome": TextInput(attrs={"id":"nome","type":"text","placeholder":"Nome","name":"nome"}),
+            "sobrenome": TextInput(attrs={"id":"sobrenome","type":"text","placeholder":"Sobrenome","name":"sobrenome"}),
+            "email": EmailInput(attrs={"id":"email","type":"email","placeholder":"Email","name":"email"}),
+            "senha": PasswordInput(attrs={"id":"senha","type":"password","placeholder":"Senha","name":"senha"})
         }
         labels = {
             "nome": "Nome:",
             "sobrenome": "Sobrenome:",
-            "dataNascimento": "Data de nascimento:",
             "email": "Email:",
+            "senha": "Senha:",
         }
         
