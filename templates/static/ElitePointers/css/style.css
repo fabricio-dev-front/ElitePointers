@@ -162,7 +162,7 @@ body{
 }
 
 @media(max-width: 730px){
-    .set-header .login #botao-in{
+    .set-header .login #botao{
         display: none;
     }
 
