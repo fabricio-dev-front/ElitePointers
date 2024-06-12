@@ -297,6 +297,10 @@ body{
     margin-top: 10px;
 }
 
+.card > .spanParcelamentos{
+    color: rgb(255, 0, 0);
+}
+
 .card > button{
     /* background-color: red;
      */
