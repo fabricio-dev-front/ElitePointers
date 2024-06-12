@@ -324,6 +324,11 @@ body{
     .card{
         max-width: 200px;
     }
+
+    .card > .spanParcelamentos{
+        font-size: 12px;
+        font-weight: bolder;
+    }
 }
 
 .card > img{
