@@ -302,11 +302,9 @@ body{
 }
 
 .card > button{
-    /* background-color: red;
-     */
-     color: black;
-     background-color: white;
-     border: 1px solid black;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
