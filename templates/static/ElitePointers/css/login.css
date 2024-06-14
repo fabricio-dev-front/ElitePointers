@@ -38,7 +38,7 @@ body{
 
 .container form > div > input{
     width: 260px;
-    background-color: rgba(255, 255, 255, 0.799);
+    color: black;
     height: 25px;
     border-radius: 5px;
     margin-top: 5px;
