@@ -38,3 +38,8 @@ def login(request):
 def logout(request):
     logout_django(request)
     return redirect('home')
+
+@login_required
+def visualizar_usuario(request,email):
+    usuario = User.objects.get(email=email)
+    return render(request,'perfil.html',{"usuario": usuario})
