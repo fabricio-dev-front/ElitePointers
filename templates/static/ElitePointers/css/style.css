@@ -185,8 +185,8 @@ body{
     }
 }
 
-.divConta{
-    border: 1px solid red;
+.set-header > .header > .divConta{
+    display: none;
 }
 /* ===================== conteudo principal ===================== */
 
