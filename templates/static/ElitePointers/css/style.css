@@ -3,8 +3,14 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    color: white;
+    color: var(--cor2);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+:root{
+    --cor1: #09090D;
+    --cor2: #D9D9D9;
+    --cor3: #2C3140;
 }
 
 img{
@@ -179,13 +185,16 @@ body{
     }
 }
 
+.divConta{
+    border: 1px solid red;
+}
 /* ===================== conteudo principal ===================== */
 
 .main{
     width: 100%;
     height: 150px;
     padding: 10px 0px;
-    background-color: white;
+    background-color: var(--cor2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,12 +236,12 @@ body{
     right: -5px;
     animation: cursorPiscando .6s infinite, mostraPalavras 20s steps(35) infinite;
     width: calc(100% + 12px);
-    background-color: white;
+    background-color: var(--cor2);
 }
 
 @keyframes cursorPiscando{
     0%{
-       border-left: 2px solid white;
+       border-left: 2px solid var(--cor2);
     }
 }
 
@@ -303,7 +312,7 @@ body{
 
 .card > button{
     color: black;
-    background-color: white;
+    background-color: var(--cor2);
     border: 1px solid black;
     padding: 5px 10px;
     border-radius: 5px;
@@ -315,7 +324,7 @@ body{
 .card > button:hover{
     cursor: pointer;
     background-color: red;
-    color: white;
+    color: var(--cor2);
 }
 
 @media(max-width: 778px){
@@ -347,7 +356,7 @@ body{
     gap: 40px;
     padding: 20px 10px;
     margin-top: 15px;
-    background-color: #1C1C1C;
+    background-color: var(--cor1);
     max-width: 100%;
 }
 
@@ -360,7 +369,7 @@ body{
 
 .footer h1{
     font-size: 20px;
-    color: red;
+    color: var(--cor2);
     text-align: center;
 }
 
