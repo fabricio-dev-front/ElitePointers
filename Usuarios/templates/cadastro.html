@@ -11,8 +11,13 @@
 <body>
     <div class="container">
         <form method="post" class="formulario" action="{% url "cadastro" %}"> {% csrf_token %}
-            <h1>Bem vindos a Elite Pointers</h1>   
-
+            <h1>Bem vindos a Elite Pointers</h1>
+            {% for field in form %}
+                {% if field.errors %}
+                    <a>{{field.errors.as_text}}</a>
+                    <br>
+                {% endif %} 
+            {% endfor %}   
             {% for field in form %}
                 {{field.label}}
                 {{field}}
