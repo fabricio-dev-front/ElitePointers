@@ -40,6 +40,6 @@ def logout(request):
     return redirect('home')
 
 @login_required
-def visualizar_usuario(request,email):
-    usuario = User.objects.get(email=email)
+def visualizar(request,email):
+    usuario = Usuario.objects.get(email=email)
     return render(request,'perfil.html',{"usuario": usuario})

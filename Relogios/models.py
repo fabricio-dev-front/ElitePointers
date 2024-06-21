@@ -14,6 +14,7 @@ class Relogio(models.Model):
     )
     preco = models.DecimalField(max_digits=10,decimal_places=2)
     material = models.CharField(max_length=20,blank=True,null=True)
+    quantidadeDisponivel = models.IntegerField()
     peso = models.FloatField(
         max_length=4,
         blank=True,
