@@ -190,7 +190,7 @@ body{
 /* .set-header > .header > .divConta{
     display: none;
 } */
- 
+
 /* ===================== conteudo principal ===================== */
 
 .main{
@@ -386,6 +386,10 @@ body{
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
+}
+
+.footer .ModoDepagamento{
+    width: 50px;
 }
 
 .footer span{
