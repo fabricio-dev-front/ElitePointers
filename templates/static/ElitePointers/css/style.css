@@ -3,14 +3,16 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    color: var(--cor2);
+    color: var(--cor1);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
 }
 
 :root{
-    --cor1: #09090D;
-    --cor2: #D9D9D9;
-    --cor3: #2C3140;
+    --cor1: #F2F2F2;
+    --cor2: #A6A6A6;
+    --cor3: #595959;
+    --cor4: #262626;
+    --cor5: #0D0D0D;
 }
 
 img{
@@ -95,7 +97,7 @@ body{
     bottom: 0;
     left: 0;
     display: block;
-    background-color: white;
+    background-color: var(--cor1);
     width: 0%;
     height: 1px;
     transition: 0.6s ease-in-out;
@@ -147,15 +149,15 @@ body{
     border-radius: 5px;
     box-shadow: none;
     border: none;
-    background-color: red;
-    color: white;
+    background-color: var(--cor5);
+    color: var(--cor1);
     font-weight: bold;
     transition: color 0.6s;
 }
 
 .set-header .login #botao-in{
     background-color: transparent; 
-    border: 1px solid red;
+    border: 1px solid var(--cor5);
 }
 
 .set-header .login > button + button{
@@ -194,7 +196,7 @@ body{
     width: 100%;
     height: 150px;
     padding: 10px 0px;
-    background-color: var(--cor2);
+    background-color: var(--cor1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,7 +207,7 @@ body{
 .main h1{
     font-size: 40px;
     font-weight: bold;
-    color: black;
+    color: var(--cor5);
 }
 
 @media (max-width: 778px){
@@ -224,7 +226,7 @@ body{
 
 .main span::before{
     content: "";
-    color: red;
+    color: var(--cor4);
     animation: animacaoPalavras 20s infinite;
 }
 
@@ -232,16 +234,16 @@ body{
     content: "";
     position: absolute;
     height: 100%;
-    border-left: 2px solid red;
+    border-left: 2px solid var(--cor4);
     right: -5px;
     animation: cursorPiscando .6s infinite, mostraPalavras 20s steps(35) infinite;
     width: calc(100% + 12px);
-    background-color: var(--cor2);
+    background-color: var(--cor1);
 }
 
 @keyframes cursorPiscando{
     0%{
-       border-left: 2px solid var(--cor2);
+       border-left: 2px solid var(--cor1);
     }
 }
 
@@ -276,7 +278,7 @@ body{
 
 .masculino{
     padding-bottom: 30px;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.185);
+    border-bottom: 3px solid var(--cor3);
 }
 
 .cards{
@@ -296,24 +298,24 @@ body{
 }
 
 .card > p{
-    color: black;
+    color: var(--cor4);
 }
 
 .card > span{
-    color: dimgray;
+    color: var(--cor3);
     display: block;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
 .card > .spanParcelamentos{
-    color: rgb(255, 0, 0);
+    color: var(--cor4);
 }
 
 .card > button{
-    color: black;
-    background-color: var(--cor2);
-    border: 1px solid black;
+    color: var(--cor2);
+    background-color: var(--cor1);
+    border: 1px solid var(--cor2);
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
@@ -323,8 +325,9 @@ body{
 
 .card > button:hover{
     cursor: pointer;
-    background-color: red;
-    color: var(--cor2);
+    border: none;
+    background-color: var(--cor5);
+    color: var(--cor1);
 }
 
 @media(max-width: 778px){
@@ -369,8 +372,12 @@ body{
 
 .footer h1{
     font-size: 20px;
-    color: var(--cor2);
+    color: var(--cor5);
     text-align: center;
+}
+
+.footer p, span{
+    color: var(--cor4);
 }
 
 .footer .iconsImagens{
