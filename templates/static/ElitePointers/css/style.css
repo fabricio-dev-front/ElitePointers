@@ -187,9 +187,10 @@ body{
     }
 }
 
-.set-header > .header > .divConta{
+/* .set-header > .header > .divConta{
     display: none;
-}
+} */
+ 
 /* ===================== conteudo principal ===================== */
 
 .main{
