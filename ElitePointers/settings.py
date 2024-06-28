@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'custom_user.apps.CustomUserConfig',
     'Relogios',
     'Usuarios',
+    'Carrinho',
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'
@@ -129,9 +130,7 @@ STATICFILES_DIRS = [
 ] 
 
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = (
-    os.path.join(BASE_DIR,'media'),
-)
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
