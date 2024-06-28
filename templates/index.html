@@ -14,19 +14,24 @@
           <li><a href="#sobre">Sobre nós</a></li>
           <li><a href="#masculino">Masculino</a></li>
           <li><a href="#feminino">Feminino</a></li>
+          {% if user.is_staff %}
+            <li><a href= "{% url "admin" %}">Gerenciar Relogios</a></li>
+          {% endif %}
         </ul>
         <div class="carrinho">
           <a href=""><img src="{% static 'ElitePointers/img/carrinho.png' %}" alt=""></a>
         </div>
-        <div class="login">
-          <button id="botao-in"><a href="{% url 'login' %}">Entrar</a></button> 
-          <button id="botao"><a href="{% url 'cadastro' %}">Cadastar</a></button>
-        </div> 
+        {% if user.is_authenticated %}
+          <div class="divConta">
+            <a href="{% url 'ver_usuario' user.email %}"><img src="{% static 'ElitePointers/img/inforConta.svg' %}" alt=""></a>
+          </div>
+        {% else %}
+          <div class="login">
+            <button id="botao-in"><a href="{% url 'login' %}">Entrar</a></button> 
+            <button id="botao"><a href="{% url 'cadastro' %}">Cadastar</a></button>
+          </div> 
+        {% endif %}
         
-        <div class="divConta">
-          <a href="/Usuarios/templates/infoConta.html"><img src="{% static ' ElitePointers/img/inforConta.svg' %}" alt=""></a>
-        </div>
-
       </header>
     </div>
 
@@ -36,108 +41,49 @@
 
     <section class="masculino js-scrollAnimado" id="masculino">
       <div class="cards">
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogi-01.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$100,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-02.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$150,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-03.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$200,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-04.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$300,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-05.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$90,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>  
-
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-06.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$120,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/masculinos/relogio-8.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$270,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
+        {% if relogios_masculinos %}
+          {% for relogio in relogios_masculinos %}
+            <div class="card">
+              <img src="{% get_media_prefix %}{{relogio.imagem}}" alt="">
+              <p>Relogio {{relogio.nome}} Marca {{relogio.marca}} {{relogio.genero}} de {{relogio.material}} {{relogio.peso}}kl {{relogio.cor}}.</p>
+              <span>R${{relogio.preco}}</span>
+              <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
+              <button>
+                {% if user.is_authenticated %}
+                  <a href="{% url "Adicionar_item_carrinho" user.email relogio.id %}">Adicionar ao carrinho</a>
+                {% else %}
+                  <a href="{% url "login" %}">Adicionar ao carrinho</a>
+                {% endif %}
+              </button>
+            </div>
+          {% endfor %}
+        {% else %}
+            <h1>Sem relogios masculinos disponiveis</h1>
+        {% endif %}
       </div>
     </section>
 
     <section class="feminino js-scrollAnimado" id="feminino">
       <div class="cards">
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-1.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$130,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-2.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$190,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-3.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$350,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-4.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$200,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-5.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$150,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
-        <div class="card">
-          <img src="{% static 'ElitePointers/img/femininos/relogio-6.jpg' %}" alt="">
-          <p>Relogio feminino de ouro 18kl com fundo laranja.</p>
-          <span>R$100,00</span>
-          <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
-          <button>Adicionar ao carrinho</button>
-        </div>
+        {% if relogios_femininos %}
+          {% for relogio in relogios_femininos %}
+            <div class="card">
+              <img src="{% get_media_prefix %}{{relogio.imagem}}" alt="">
+              <p>Relogio {{relogio.nome}} Marca {{relogio.marca}} {{relogio.genero}} de {{relogio.material}} {{relogio.peso}}kl {{relogio.cor}}.</p>
+              <span>R${{relogio.preco}}</span>
+              <span class="spanParcelamentos">parcelamos em até 5x sem juros</span>
+              <button>
+                {% if user.is_authenticated %}
+                  <a href="{% url "Adicionar_item_carrinho" user.email relogio.id %}">Adicionar ao carrinho</a>
+                {% else %}
+                  <a href="{% url "login" %}">Adicionar ao carrinho</a>
+                {% endif %}
+              </button>
+            </div>
+          {% endfor %}
+        {% else %}
+            <h1 color="red">Sem relogios femininos disponiveis</h1>
+        {% endif %}
       </div>
     </section>
 
@@ -149,9 +95,9 @@
       <div class="formasDePagamento">
         <h1>Formas de pagamento:</h1>
         <article class="iconsImagens">
-          <abbr title="Á vista"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamentos/economizar.png' %}" alt=""></abbr>
-          <abbr title="Parcelamos no cartão"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamentos/pagamentos-com-cartao-de-credito.png' %}" alt=""></abbr>
-          <abbr title="Aceitamos Pix"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamentos/pix_icon_198027.png' %}" alt=""></abbr>
+          <abbr title="Á vista"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamento/economizar.png' %}" alt=""></abbr>
+          <abbr title="Parcelamos no cartão"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamento/pagamento-com-cartao-de-credito.png' %}" alt=""></abbr>
+          <abbr title="Aceitamos Pix"><img class="ModoDepagamento" src="{% static 'ElitePointers/img/pagamento/pix_icon_198027.png' %}" alt=""></abbr>
       </article>
       </div>
       <div class="contatos">
