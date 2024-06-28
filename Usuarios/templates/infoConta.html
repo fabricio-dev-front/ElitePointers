@@ -1,33 +1,34 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/templates/static/ElitePointers/css/dados.css">
+    <link rel="stylesheet" href="{% static 'ElitePointers/css/dados.css' %}">
     <title>Dados pessoais</title>
 </head>
 <body>
     <section>
         <div class="container">
             <div class="cabeca">
-                <img src="/templates/static/ElitePointers/img/perfil/perfil.png" alt="">
-                <h2>Olá, fabricio</h2>
+                <img src="{% static 'ElitePointers/img/perfil/perfil.png' %}" alt="">
+                <h2>Olá, {{usuario.nome}}</h2>
             </div>
             <span>seja bem vindo!</span>
 
             <section class="minhasCompras">
                 <div class="aPagar">
-                    <img src="/templates/static/ElitePointers/img/perfil/forma-de-pagamento.png" alt="">
+                    <img src="{% static 'ElitePointers/img/perfil/forma-de-pagamento.png' %}" alt="">
                     <span>Á pagar</span>
                 </div>
 
                 <div class="preparando">
-                    <img src="/templates/static/ElitePointers/img/perfil/preparando.png" alt="">
+                    <img src="{% static 'ElitePointers/img/perfil/preparando.png' %}" alt="">
                     <span>Preparando</span>
                 </div>
 
                 <div class="aCaminho">
-                    <img src="/templates/static/ElitePointers/img/perfil/entrega-rapida.png" alt="">
+                    <img src="{% static 'ElitePointers/img/perfil/entrega-rapida.png' %}" alt="">
                     <span>A caminho</span>
                 </div>
             </section>

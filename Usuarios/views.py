@@ -5,7 +5,6 @@ from custom_user.models import User
 from .models import Usuario
 from django.contrib.auth.decorators import login_required
 
-
 def cadastrar(request):
     form = UserForm(request.POST or None)
     if request.method == "POST":
@@ -42,4 +41,8 @@ def logout(request):
 @login_required
 def visualizar(request,email):
     usuario = Usuario.objects.get(email=email)
-    return render(request,'perfil.html',{"usuario": usuario})
+    return render(request,'infoConta.html',{"usuario": usuario})
+
+@login_required
+def redireciona_admin(request):
+    return redirect("/admin/")
