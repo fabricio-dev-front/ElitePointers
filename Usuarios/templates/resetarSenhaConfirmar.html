@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        {% if validlink %}
+            <h3>Mudar senha</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Alterar senha</button>
+            </form>
+        {% else %}
+            <p>o link de reset da senha está invalido, possívelmente porque já foi usado, por favor tente alterar a senha novamente</p>
+        {% endif %}
+    {% endblock %}
+    
+</body>
+</html>
+
