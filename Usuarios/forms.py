@@ -1,7 +1,5 @@
-from django.forms import ModelForm,TextInput,EmailInput,DateInput,PasswordInput
+from django.forms import ModelForm,TextInput,EmailInput,PasswordInput
 from .models import Usuario
-from django.utils.translation import gettext_lazy as _
-from django.core.exceptions import ValidationError
 class UserForm(ModelForm):
     class Meta:
         model = Usuario
