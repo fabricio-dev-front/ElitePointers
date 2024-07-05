@@ -4,6 +4,7 @@ from django.contrib.auth import login as login_django,logout as logout_django,au
 from custom_user.models import User
 from .models import Usuario
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import make_password
 
 def cadastrar(request):
     form = UserForm(request.POST or None)
@@ -16,6 +17,7 @@ def cadastrar(request):
             if user:
                 usuario = Usuario()
                 usuario = form.save(commit=False)
+                usuario.senha = make_password(usuario.senha)
                 usuario.user = user
                 usuario.save()
                 return redirect('home')
